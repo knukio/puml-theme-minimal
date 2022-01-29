@@ -1,0 +1,210 @@
+!$WHITE = "#FFFFFF"
+!$GRAY = "#f5f5f5" 
+!$GRAY2 = "#2b2b2b"
+!$BLUE = "#e6f7ff"
+!$BLUE2 = "#0051bc"
+!$BLUE3 = "#64a8e2"
+!$PURPLE = "#f8e6ff"
+!$PURPLE2 = "#6100a6"
+!$PURPLE3 = "#b37cd2"
+!$RED = "#ffe6ea"
+!$RED2 = "#ae002a"
+!$RED3 = "#e0828b"
+!$GREEN = "#e6fff6"
+!$GREEN2 = "#00854a"
+!$GREEN3 = "#7dc2a2"
+
+!$BASEBG = $WHITE
+!$BASEBG2 = $GRAY
+!$BASEBORDER = $GRAY2
+!$BASETEXT = $GRAY2
+!$BASEFILL = $GRAY2
+
+!unquoted procedure $color($msg, $color)
+<font color=$color>$msg</font>
+!endprocedure
+
+!procedure $set_skin($background=$BASEBG, $border=$BASEBORDER, $text=$BASETEXT)
+    FontColor $text
+	BorderColor $border
+	BackgroundColor $background
+    TitleFontColor $text
+    ArrowFontColor $text
+    StereotypeFontColor $text
+!endprocedure
+
+!procedure $base($bg, $border, $text)
+	BackgroundColor $bg
+	BorderColor $border
+    FontColor $text
+    TitleFontColor $text
+    ArrowFontColor $text
+    StereotypeFontColor $text
+!endprocedure
+
+skinparam shadowing false
+skinparam RoundCorner 7
+
+!procedure $set_global_skin($bg=$BASEBG, $border=$BASEBORDER, $text=$BASETEXT, $thickness=1)
+skinparam BackgroundColor $bg
+skinparam ArrowColor $border
+skinparam LineColor $border
+skinparam ArrowThickness $thickness
+skinparam LineThickness $thickness
+skinparam DefaultFontColor $text
+!endprocedure
+
+!procedure $set_skins($bg=$BASEBG, $border=$BASEBORDER, $text=$BASETEXT, $bg2=$BASEBG2, $fill=$BASEFILL)
+skinparam actor {
+    $base($bg, $border, $text)
+}
+
+skinparam legend {
+    $base($bg, $border, $text)
+    BackgroundColor $bg2
+}
+
+skinparam rectangle {
+    $base($bg, $border, $text)
+}
+
+skinparam usecase {
+    $base($bg, $border, $text)
+}
+
+skinparam activity {
+    $base($bg, $border, $text)
+    BarColor $fill
+    EndColor $fill
+    StartColor $fill
+}
+
+skinparam activitydiamond {
+    $base($bg, $border, $text)
+}
+
+skinparam partition {
+    $base($bg, $border, $text)
+}
+
+skinparam note {
+    $base($bg, $border, $text)
+    BackgroundColor $bg2
+}
+
+skinparam class {
+    $base($bg, $border, $text)
+    AttributeFontColor $text
+}
+
+skinparam collections {
+    $base($bg, $border, $text)
+}
+
+skinparam component {
+    $base($bg, $border, $text)
+}
+
+skinparam interface {
+    $base($bg, $border, $text)
+}
+
+skinparam artifact {
+    $base($bg, $border, $text)
+}
+
+skinparam database {
+    $base($bg, $border, $text)
+}
+
+skinparam card {
+    $base($bg, $border, $text)
+}
+
+skinparam file {
+    $base($bg, $border, $text)
+}
+
+skinparam queue {
+    $base($bg, $border, $text)
+}
+
+skinparam node {
+    $base($bg, $border, $text)
+}
+
+skinparam package {
+    $base($bg, $border, $text)
+}
+
+skinparam cloud {
+    $base($bg, $border, $text)
+}
+
+skinparam stack {
+    $base($bg, $border, $text)
+}
+
+skinparam storage {
+    $base($bg, $border, $text)
+}
+
+skinparam object {
+    $base($bg, $border, $text)
+    AttributeFontColor $text
+}
+
+skinparam boundary {
+    $base($bg, $border, $text)
+}
+
+skinparam control {
+    $base($bg, $border, $text)
+}
+
+skinparam entity {
+    $base($bg, $border, $text)
+}
+
+skinparam participant {
+    $base($bg, $border, $text)
+}
+
+skinparam sequencebox {
+    $base($bg, $border, $text)
+}
+
+skinparam sequence {
+    $base($bg, $border, $text)
+    LifeLineBorderColor $border
+}
+
+skinparam sequencegroup {
+    $base($bg, $border, $text)
+    HeaderFontColor $text
+}
+
+skinparam sequencereference {
+    $base($bg, $border, $text)
+    HeaderBackgroundColor $bg
+}
+
+skinparam state {
+    $base($bg, $border, $text)
+    BarColor $fill
+    EndColor $fill
+    StartColor $fill
+}
+
+skinparam swimlane {
+    $base($bg, $border, $text)
+}
+!endprocedure
+
+!procedure $dark()
+    $set_global_skin($GRAY2, $GRAY)
+    $set_skins($GRAY2, $GRAY, $GRAY, $GRAY2, $GRAY)
+!endprocedure
+
+$set_skins()
+$set_global_skin()
