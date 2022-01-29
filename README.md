@@ -39,20 +39,29 @@ The following functions allow you to customize the style.
   - Sets the style for non-components.
 - `$set_skins(background, border, text, background2, fill)`
   - Sets the style for major components (e.g. actor, database, rectangle, etc.).
+  - Call before `$set_skin`.
 - `$set_skin(background, border, text)`
   - It can be used inside `skinparam` to set the style of the component.
 - `$color(content, color)`
   - Allows you to change the color of partial text.
 
+Except for `$color`, if arguments are omitted, the default values will be used.
+
 ### Arguments
 
-- `thickness` takes a real number.
-- `content` takes a string.
-- The others take a color code as a string.
+- `background`: background color
+- `border`: border, line, and arrow color
+- `text`: font color
+- `thickness`: thickness of line and arrows. It takes a real number.
+- `background2`: color for `LegendBackgroundColor` and `NoteBackgroundColor`
+- `fill`: color for `BarColor`, `EndColor`, and `StartColor`
+- `content`: text content.
+- `color`: color for a text content.
 
 ### Preset Colors
 
 Some colors are declared as variables.
+Of course, the functions can also take any color code.
 
 - `$GRAY`, `$GRAY2`, `$GRAY3`
 - `$BLUE`, `$BLUE2`, `$BLUE3`
@@ -72,7 +81,7 @@ The third color in each line is the middle density.
 @startuml
 !include https://github.com/knukio/puml-theme-minimal/raw/main/puml-theme-minimal.puml
 
-' global is red
+' global color is red
 $set_global_skin($RED, $RED2, $RED2)
 ' components are blue
 $set_skins($BLUE, $BLUE2, $BLUE2)
@@ -88,7 +97,7 @@ node "My Node" {
   IF - [Second $color(Component, #aaaa00)]
   ' "some message" is green
   [First Component] --> IF : $color(some message, $GREEN2)
-} 
+}
 
 [Another Component]
 
