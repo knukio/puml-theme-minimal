@@ -1,0 +1,15 @@
+@startuml
+!include https://github.com/knukio/puml-theme-minimal/raw/main/puml-theme-minimal.puml
+
+$dark()
+
+title My theme
+
+node "My Node" {
+  IF - [Second Component]
+  [First Component] --> IF : some message
+} 
+
+[Another Component]
+
+@enduml

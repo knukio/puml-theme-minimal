@@ -1,0 +1,19 @@
+@startuml
+!include https://github.com/knukio/puml-theme-minimal/raw/main/puml-theme-minimal.puml
+
+$set_global_skin($RED, $RED2, $RED2)
+$set_skins($BLUE, $BLUE2, $BLUE2)
+skinparam node {
+  $set_skin($PURPLE, $PURPLE2, $PURPLE2)
+}
+
+title My theme
+
+node "My Node" {
+  IF - [Second $color(Component, #aaaa00)]
+  [First Component] --> IF : $color(some message, $GREEN2)
+} 
+
+[Another Component]
+
+@enduml
