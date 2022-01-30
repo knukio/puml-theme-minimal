@@ -27,16 +27,16 @@
 
 !procedure $set_skin($background=$BASEBG, $border=$BASEBORDER, $text=$BASETEXT)
     FontColor $text
-	BorderColor $border
-	BackgroundColor $background
+    BorderColor $border
+    BackgroundColor $background
     TitleFontColor $text
     ArrowFontColor $text
     StereotypeFontColor $text
 !endprocedure
 
 !procedure $base($bg, $border, $text)
-	BackgroundColor $bg
-	BorderColor $border
+    BackgroundColor $bg
+    BorderColor $border
     FontColor $text
     TitleFontColor $text
     ArrowFontColor $text
