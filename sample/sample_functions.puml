@@ -10,10 +10,10 @@ skinparam node {
 title My theme
 
 node "My Node" {
+  [First Component] -[$GRAY2]-> IF : $color(some message, $GREEN2)
   IF - [Second $color(Component, #aaaa00)]
-  [First Component] --> IF : $color(some message, $GREEN2)
 } 
 
-[Another Component]
+[Another Component] $GREEN3
 
 @enduml
